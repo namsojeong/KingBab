@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8984612189529092682}
   - component: {fileID: 8197143245662854107}
+  - component: {fileID: 7570629021117488339}
   m_Layer: 0
   m_Name: Sigumchi (2)
   m_TagString: Untagged
@@ -82,3 +83,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &7570629021117488339
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428383664657071149}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.35818955, y: 0.23271458}
+  - {x: -0.26295912, y: -0.020146087}
+  - {x: -0.25930429, y: -0.23128621}
+  - {x: -0.31380105, y: -0.34907186}
+  - {x: -0.2304053, y: -0.4421068}
+  - {x: -0.08684273, y: -0.24995342}
+  - {x: 0.18952346, y: -0.21426184}
+  - {x: 0.39573026, y: -0.08813435}
+  - {x: 0.40435708, y: 0.025881007}
+  - {x: 0.30582708, y: 0.18521254}
+  - {x: 0.15330027, y: 0.026392637}
+  - {x: 0.24585919, y: 0.19339234}
+  - {x: 0.23958902, y: 0.32556665}
+  - {x: 0.16426778, y: 0.35615638}
+  - {x: 0.09140441, y: 0.4444704}
+  - {x: 0.050879814, y: 0.39060354}
+  - {x: -0.030633442, y: 0.45063382}
+  - {x: -0.12600186, y: 0.16711496}
+  - {x: -0.3544988, y: 0.23271458}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

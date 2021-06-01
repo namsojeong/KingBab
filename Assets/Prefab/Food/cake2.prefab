@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7251504938724470982}
   - component: {fileID: 7201586698584527123}
   - component: {fileID: 9047132836926084033}
+  - component: {fileID: 1323118822855851367}
   m_Layer: 0
   m_Name: cake2
   m_TagString: Untagged
@@ -97,3 +98,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2
   speed: 3
+--- !u!68 &1323118822855851367
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8789235074412632255}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.34956434, y: 1.1630442}
+  - {x: -0.5904705, y: 0.99730325}
+  - {x: -0.68908286, y: 0.5071423}
+  - {x: -1.1706872, y: -0.38321638}
+  - {x: -0.78403795, y: -1.1797382}
+  - {x: -0.16415548, y: -0.9979259}
+  - {x: 0.6047591, y: -0.7057392}
+  - {x: 1.1529031, y: -0.3310939}
+  - {x: 0.756952, y: 0.9229488}
+  - {x: 0.107544556, y: 1.1693897}
+  - {x: -0.2696788, y: 1.126232}
+  - {x: -0.33895794, y: 1.1537403}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

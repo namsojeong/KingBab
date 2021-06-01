@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6241222775408818226}
   - component: {fileID: 6010228611199498327}
+  - component: {fileID: 5977647042617997675}
   m_Layer: 0
   m_Name: Ham (2)
   m_TagString: Untagged
@@ -82,3 +83,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &5977647042617997675
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604887812440679578}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.456366, y: -0.34543568}
+  - {x: -0.46363834, y: -0.069087125}
+  - {x: 0.10365802, y: 0.3708889}
+  - {x: 0.22344108, y: 0.37932384}
+  - {x: 0.3520024, y: 0.26506647}
+  - {x: 0.38155776, y: 0.12264143}
+  - {x: -0.21435113, y: -0.4087114}
+  - {x: -0.4010239, y: -0.401524}
+  - {x: -0.45267522, y: -0.33816338}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

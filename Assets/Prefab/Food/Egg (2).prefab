@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165359250705327577}
   - component: {fileID: 2049092636882744952}
+  - component: {fileID: 6897295028706282129}
   m_Layer: 0
   m_Name: Egg (2)
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300434314287103582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,3 +83,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &6897295028706282129
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300434314287103582}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.21274295, y: 0.31271023}
+  - {x: -0.3500014, y: 0.15515243}
+  - {x: -0.35698262, y: -0.09293614}
+  - {x: -0.20835224, y: -0.25089538}
+  - {x: -0.049360584, y: -0.2534426}
+  - {x: -0.058655497, y: -0.20180121}
+  - {x: 0.032020167, y: -0.25753182}
+  - {x: 0.10524759, y: -0.2483247}
+  - {x: 0.20095643, y: -0.1536332}
+  - {x: 0.19038214, y: 0.043991245}
+  - {x: 0.062362045, y: 0.1522487}
+  - {x: -0.07056001, y: 0.32051724}
+  - {x: -0.21632451, y: 0.31634638}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

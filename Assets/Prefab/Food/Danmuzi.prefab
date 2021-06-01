@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7345788403054495406}
   - component: {fileID: 2418325377957489958}
+  - component: {fileID: 1645376700291056202}
   m_Layer: 0
   m_Name: Danmuzi
   m_TagString: Untagged
@@ -82,3 +83,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &1645376700291056202
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900687482055448167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.11468238, y: 0.28603333}
+  - {x: -0.23535395, y: 0.19221236}
+  - {x: -0.31006008, y: 0.18455756}
+  - {x: -0.43393892, y: 0.06450386}
+  - {x: -0.4388499, y: -0.09073753}
+  - {x: -0.2815718, y: -0.22220771}
+  - {x: 0.23275754, y: -0.21336417}
+  - {x: 0.4182247, y: -0.09174937}
+  - {x: 0.39598787, y: 0.07564518}
+  - {x: 0.28654608, y: 0.18885149}
+  - {x: 0.14217399, y: 0.19334818}
+  - {x: 0.032230034, y: 0.27901268}
+  - {x: -0.11698099, y: 0.2813055}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
