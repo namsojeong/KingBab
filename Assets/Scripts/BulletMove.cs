@@ -53,18 +53,19 @@ public class BulletMove : MonoBehaviour
         {
             gameManager.Danmuzi += 1;
         }
-        else if (collision.CompareTag("Egg"))
+        if (collision.CompareTag("Egg"))
         {
             gameManager.Egg += 1;
         }
-        else if (collision.CompareTag("Ham"))
+        if (collision.CompareTag("Ham"))
         {
             gameManager.Ham += 1;
         }
-        else if (collision.CompareTag("Sigumchi"))
+        if (collision.CompareTag("Sigumchi"))
         {
             gameManager.Sigumchi += 1;
         }
+        gameManager.AddScore(gameManager.score);
         
     }
 }

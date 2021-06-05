@@ -8,8 +8,6 @@ public class EnemyMove : MonoBehaviour
     private int hp = 2;
     [SerializeField]
     private float speed = 5f;
-    [SerializeField]
-    private int score = 100;
     private bool isDead = false;
     private bool isDamaged = false;
 

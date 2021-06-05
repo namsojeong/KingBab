@@ -9,12 +9,14 @@ public class GameManager : MonoBehaviour
     public Vector2 MinPosition { get; private set; }
     public Vector2 MaxPosition { get; private set; }
 
-    private int score = 0;
+    public int score = 0;
+    private int addscore = 10;
     private int life = 3;
-    private int highscore = 500;
+    private int highscore = 0;
     public int Danmuzi = 0;
     public int Egg = 0;
     public int Ham = 0;
+    [SerializeField]
     public int Sigumchi = 0;
 
     [Header("Á¡¼ö")]
@@ -45,9 +47,9 @@ public class GameManager : MonoBehaviour
         poolManager = FindObjectOfType<PoolManager>();
         MinPosition = new Vector2(-3f, -4f);
         MaxPosition = new Vector2(3f, 4f);
+        UpdateUI();
         StartCoroutine(SpawnEnemy());
         StartCoroutine(SpawnIng());
-        AddScore();
     }
     private IEnumerator SpawnEnemy()
     {
@@ -104,23 +106,19 @@ public class GameManager : MonoBehaviour
         }
         yield return new WaitForSeconds(randomDelay);
     }
-    private void AddScore()
+    public void AddScore(int score)
     {
-        while(true)
-        {
         if (Danmuzi >= 1 && Egg >= 1 && Ham >= 1 && Sigumchi >= 1)
         {
-            score += 10;
+            score = score + addscore;
             Danmuzi--;
             Egg--;
             Ham--;
             Sigumchi--;
+            UpdateUI();
         }
         else
-            continue;
-
-        }
-        UpdateUI();
+            UpdateUI();
     }
     public void UpdateUI()
     {
