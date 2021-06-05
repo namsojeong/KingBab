@@ -46,7 +46,6 @@ public class EnemyMove : MonoBehaviour
         hp--;
         if (hp <= 0)
         {
-            isDead = true;
             Destroy(gameObject);
             isDead = false;
         }
