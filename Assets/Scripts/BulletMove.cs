@@ -16,9 +16,55 @@ public class BulletMove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.up*speed * Time.deltaTime);
-        if(transform.position.y>gameManager.MaxPosition.y)
+        if(transform.position.y>gameManager.MaxPosition.y+2f)
         {
             Destroy(gameObject);
         }
+        //CheckLimit();
+    }
+    //private void CheckLimit()
+    //{
+    //    if(transform.position.y>gameManager.MaxPosition.y+2f)
+    //    {
+    //        Despawn();
+    //    }
+    //    if(transform.position.y<gameManager.MinPosition.y-2f)
+    //    {
+    //        Despawn();
+    //    }
+    //    if(transform.position.x>gameManager.MaxPosition.y+2f)
+    //    {
+    //        Despawn();
+    //    }
+    //    if(transform.position.x<gameManager.MinPosition.y-2f)
+    //    {
+    //        Despawn();
+    //    }
+    //}
+    //private void Despawn()
+    //{
+    //    gameObject.SetActive(false);
+    //    transform.SetParent(gameManager.poolManager.transform, false);
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Danmuzi"))
+        {
+            gameManager.Danmuzi += 1;
+        }
+        else if (collision.CompareTag("Egg"))
+        {
+            gameManager.Egg += 1;
+        }
+        else if (collision.CompareTag("Ham"))
+        {
+            gameManager.Ham += 1;
+        }
+        else if (collision.CompareTag("Sigumchi"))
+        {
+            gameManager.Sigumchi += 1;
+        }
+        
     }
 }

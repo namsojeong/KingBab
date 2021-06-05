@@ -8,15 +8,19 @@ public class EnemyMove : MonoBehaviour
     private int hp = 2;
     [SerializeField]
     private float speed = 5f;
+    [SerializeField]
+    private int score = 100;
     private bool isDead = false;
     private bool isDamaged = false;
 
+    private SpriteRenderer spriteRenderer = null;
     private GameManager gameManager = null;
     private Collider2D col = null;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         col = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -28,4 +32,24 @@ public class EnemyMove : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Bullet"))
+        {
+            Destroy(collision);
+            Damaged();
+        }
+    }
+    void Damaged()
+    {
+        if (isDamaged) return;
+        hp--;
+        if (hp <= 0)
+        {
+            isDead = true;
+            Destroy(gameObject);
+            isDead = false;
+        }
+    }
+
 }
