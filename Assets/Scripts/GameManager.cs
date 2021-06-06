@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        highscore = PlayerPrefs.GetInt("HIGHSCORE");
         poolManager = FindObjectOfType<PoolManager>();
         MinPosition = new Vector2(-3f, -4f);
         MaxPosition = new Vector2(3f, 4f);
@@ -117,6 +118,11 @@ public class GameManager : MonoBehaviour
             Ham--;
             Sigumchi--;
             score = score + 10;
+            if(score>highscore)
+            {
+                highscore = score;
+                PlayerPrefs.SetInt("HIGHSCORE", highscore);
+            }
             UpdateUI();
         }
         else

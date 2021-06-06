@@ -5,13 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject setting = null;
+    private bool ismenu = false;
+    private GameManager gameManager = null;
+    private void Start()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
     public void OnPlayClick()
     {
         SceneManager.LoadScene("Main");
     }
-    public void OnSettingClick()
+    public void OnSettingOpenClick()
     {
-        
+        setting.SetActive(true);
+    }
+    public void OnCloseClick()
+    {
+        setting.SetActive(false);
     }
     public void OnRetryClick()
     {
@@ -20,5 +32,9 @@ public class StartMenu : MonoBehaviour
     public void OnHomeClick()
     {
         SceneManager.LoadScene("Start");
+    }
+    public void OnHighscoreClick()
+    {
+        PlayerPrefs.SetInt("HIGHSCORE", 0);
     }
 }

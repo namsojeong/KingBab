@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     private float bulletDelay = 0.5f;
     private void Start()
     {
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameManager = FindObjectOfType<GameManager>();
         StartCoroutine(Fire());
@@ -75,10 +76,23 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            isDamaged = true;
+            //StartCoroutine(Damaged());
             gameManager.LifeDead();
         }
-        
     }
+
+    //private IEnumerator Damaged()
+    //{
+    //    for(int i=0;i<3;i++)
+    //    {
+    //        gameObject.SetActive(false);
+    //        yield return new WaitForSeconds(0.1f);
+    //        gameObject.SetActive(true);
+    //        yield return new WaitForSeconds(0.1f);
+    //    }
+    //    isDamaged = false;
+    //}
 
 
 }

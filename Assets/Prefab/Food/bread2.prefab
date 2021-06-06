@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1638155647218602936}
   - component: {fileID: 9196550063077571902}
   - component: {fileID: -8686829462339761415}
-  - component: {fileID: 3566754933084030991}
+  - component: {fileID: -1087867338083966958}
   m_Layer: 7
   m_Name: bread2
   m_TagString: Enemy
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2
   speed: 5
---- !u!68 &3566754933084030991
-EdgeCollider2D:
+--- !u!58 &-1087867338083966958
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,25 +111,6 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.96500534, y: 0.92153054}
-  - {x: 0.44687158, y: 0.8848793}
-  - {x: -0.33886236, y: 0.568604}
-  - {x: -0.7755361, y: 0.22006035}
-  - {x: -1.1534973, y: -0.3127605}
-  - {x: -1.1912024, y: -0.6547172}
-  - {x: -0.7988687, y: -0.910236}
-  - {x: -0.36959255, y: -0.9411376}
-  - {x: 0.16484964, y: -0.7481491}
-  - {x: 0.61907184, y: -0.374789}
-  - {x: 0.85308915, y: -0.19175349}
-  - {x: 1.067476, y: 0.031072676}
-  - {x: 1.2002145, y: 0.41261125}
-  - {x: 1.1722684, y: 0.7537511}
-  - {x: 0.976091, y: 0.90192354}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: 0, y: -0.3}
+  serializedVersion: 2
+  m_Radius: 1.28
