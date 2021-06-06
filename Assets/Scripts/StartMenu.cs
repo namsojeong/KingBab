@@ -13,4 +13,12 @@ public class StartMenu : MonoBehaviour
     {
         
     }
+    public void OnRetryClick()
+    {
+        SceneManager.LoadScene("Main");
+    }
+    public void OnHomeClick()
+    {
+        SceneManager.LoadScene("Start");
+    }
 }

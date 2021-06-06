@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 4005168363140568372}
   - component: {fileID: 7352842467679113993}
   - component: {fileID: 3563908141033853400}
-  - component: {fileID: -7251764414622188420}
   - component: {fileID: 7606533163839935135}
   m_Layer: 7
   m_Name: candy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,28 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2
   speed: 7
-  score: 100
---- !u!50 &-7251764414622188420
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649987032715361520}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!68 &7606533163839935135
 EdgeCollider2D:
   m_ObjectHideFlags: 0

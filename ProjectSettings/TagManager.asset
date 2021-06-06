@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Sigumchi
+  - Ham
+  - Egg
+  - Danmuzi
+  - Enemy
   layers:
   - Default
   - TransparentFX

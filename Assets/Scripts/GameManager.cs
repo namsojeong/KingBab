@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public Vector2 MaxPosition { get; private set; }
 
     public int score = 0;
-    private int addscore = 10;
     private int life = 3;
     private int highscore = 0;
     public int Danmuzi = 0;
@@ -39,6 +38,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject ingredient1, ingredient2, ingredient3, ingredient4;
+    [Header("»ý¸í")]
+    [SerializeField]
+    private GameObject Life1, Life2;
 
     public PoolManager poolManager { get; private set; }
 
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
         int randomIng;
         while(true)
         {
-            randomIng = Random.Range(1, 4);
+            randomIng = Random.Range(1, 5);
             randomX = Random.Range(-1.5f, 1.5f);
             randomDelay = Random.Range(1f, 10f);
             switch(randomIng)
@@ -106,15 +108,15 @@ public class GameManager : MonoBehaviour
         }
         yield return new WaitForSeconds(randomDelay);
     }
-    public void AddScore(int score)
+    public void AddScore()
     {
         if (Danmuzi >= 1 && Egg >= 1 && Ham >= 1 && Sigumchi >= 1)
         {
-            score = score + addscore;
             Danmuzi--;
             Egg--;
             Ham--;
             Sigumchi--;
+            score = score + 10;
             UpdateUI();
         }
         else
@@ -127,5 +129,21 @@ public class GameManager : MonoBehaviour
         textHscore.text = string.Format("{0}", Ham);
         textDscore.text = string.Format("{0}", Danmuzi);
         textEscore.text = string.Format("{0}", Egg);
+    }
+    public void LifeDead()
+    {
+        life--;
+        if(life==2)
+        {
+            Life1.SetActive(false);
+        }
+        else if(life==1)
+        {
+            Life2.SetActive(false);
+        }
+        if(life<=0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

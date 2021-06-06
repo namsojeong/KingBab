@@ -70,6 +70,15 @@ public class PlayerMove : MonoBehaviour
     //    }
     //    return result;
     //}
-   
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            gameManager.LifeDead();
+        }
+        
+    }
+
 
 }

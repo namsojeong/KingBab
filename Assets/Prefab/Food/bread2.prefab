@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 1638155647218602936}
   - component: {fileID: 9196550063077571902}
   - component: {fileID: -8686829462339761415}
-  - component: {fileID: 8647169678441033672}
   - component: {fileID: 3566754933084030991}
   m_Layer: 7
   m_Name: bread2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,28 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2
   speed: 5
-  score: 100
---- !u!50 &8647169678441033672
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8770534377950048733}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!68 &3566754933084030991
 EdgeCollider2D:
   m_ObjectHideFlags: 0

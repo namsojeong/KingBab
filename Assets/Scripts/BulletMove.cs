@@ -65,7 +65,6 @@ public class BulletMove : MonoBehaviour
         {
             gameManager.Sigumchi += 1;
         }
-        gameManager.AddScore(gameManager.score);
-        
+        gameManager.AddScore();
     }
 }
