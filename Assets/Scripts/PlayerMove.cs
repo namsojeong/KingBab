@@ -42,35 +42,31 @@ public class PlayerMove : MonoBehaviour
     }
     private IEnumerator Fire()
     {
-        // TODO: 총알 발사 스크립트를 작성해 주세요.
         while (true)
         {
-            //InstantiateOrPool();
-            GameObject newBullet = Instantiate(bulletPrefab, bulletPosition);
-            newBullet.transform.position = bulletPosition.position;
-            newBullet.transform.SetParent(null);
+            InstantiateOrPoolBullet();
             yield return new WaitForSeconds(bulletDelay);
         }
     }
-    //private GameObject InstantiateOrPool()
-    //{
-    //    GameObject result = null;
-    //    if (gameManager.poolManager.transform.childCount > 0)
-    //    {
-    //        result = gameManager.poolManager.transform.GetChild(0).gameObject;
-    //        result.transform.position = bulletPosition.position;
-    //        result.transform.SetParent(null);
-    //        result.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        GameObject newBullet = Instantiate(bulletPrefab, bulletPosition);
-    //        newBullet.transform.position = bulletPosition.position;
-    //        newBullet.transform.SetParent(null);
-    //        result = newBullet;
-    //    }
-    //    return result;
-    //}
+    private GameObject InstantiateOrPoolBullet()
+    {
+        GameObject result = null;
+        if (gameManager.poolManager.transform.childCount > 0)
+        {
+            result = gameManager.poolManager.transform.GetChild(0).gameObject;
+            result.transform.position = bulletPosition.position;
+            result.transform.SetParent(null);
+            result.SetActive(true);
+        }
+        else
+        {
+            GameObject newBullet = Instantiate(bulletPrefab, bulletPosition);
+            newBullet.transform.position = bulletPosition.position;
+            newBullet.transform.SetParent(null);
+            result = newBullet;
+        }
+        return result;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

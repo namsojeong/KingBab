@@ -43,8 +43,10 @@ public class GameManager : MonoBehaviour
     private GameObject Life1, Life2;
 
     public PoolManager poolManager { get; private set; }
+    public PoolManager poolManagerIng { get; private set; }
+    public PoolManager poolManagerEnemy { get; private set; }
 
-    void Start()
+    void Awake()
     {
         highscore = PlayerPrefs.GetInt("HIGHSCORE");
         poolManager = FindObjectOfType<PoolManager>();
@@ -59,12 +61,46 @@ public class GameManager : MonoBehaviour
         float randomX = 0f;
         float randomDelay = 0f;
         int randomEnemy;
-        while(true)
+
+        while (true)
         {
-            randomEnemy = Random.Range(1, 4);
+            InstantiateOrPoolEnemy();
+            yield return new WaitForSeconds(randomDelay);
+        }
+    }
+    private IEnumerator SpawnIng()
+    {
+        float randomX = 0f;
+        float randomDelay = 0f;
+        int randomIng;
+        while (true)
+        {
+            InstantiateOrPoolIng();
+            yield return new WaitForSeconds(randomDelay);
+        }
+    }
+    private GameObject InstantiateOrPoolEnemy()
+    {
+        float randomX = 0f;
+        float randomDelay = 0f;
+        int randomEnemy;
+        GameObject result = null;
+        if (poolManagerEnemy.transform.childCount > 0)
+        {
+            if (poolManagerEnemy.transform.childCount > 0)
+            {
+                result = poolManagerEnemy.transform.GetChild(0).gameObject;
+                result.transform.position = new Vector2(randomX, 3.9f);
+                result.transform.SetParent(null);
+                result.SetActive(true);
+            }
+        }
+        else
+        {
+            randomEnemy = Random.Range(1, 5);
             randomX = Random.Range(-1.5f, 1.5f);
             randomDelay = Random.Range(1f, 10f);
-            switch(randomEnemy)
+            switch (randomEnemy)
             {
                 case 1:
                     Instantiate(enemy1, new Vector2(randomX, 3.9f), Quaternion.identity);
@@ -76,21 +112,31 @@ public class GameManager : MonoBehaviour
                     Instantiate(enemy3, new Vector2(randomX, 3.9f), Quaternion.identity);
                     break;
             }
-            yield return new WaitForSeconds(1f);
         }
-        yield return new WaitForSeconds(randomDelay);
     }
-    private IEnumerator SpawnIng()
+
+    private GameObject InstantiateOrPoolIng()
     {
         float randomX = 0f;
         float randomDelay = 0f;
         int randomIng;
-        while(true)
+        GameObject result = null;
+        if (poolManagerIng.transform.childCount > 0)
+        {
+            if (poolManagerIng.transform.childCount > 0)
+            {
+                result = poolManagerIng.transform.GetChild(0).gameObject;
+                result.transform.position = new Vector2(randomX, 3.9f);
+                result.transform.SetParent(null);
+                result.SetActive(true);
+            }
+        }
+        else
         {
             randomIng = Random.Range(1, 5);
             randomX = Random.Range(-1.5f, 1.5f);
             randomDelay = Random.Range(1f, 10f);
-            switch(randomIng)
+            switch (randomIng)
             {
                 case 1:
                     Instantiate(ingredient1, new Vector2(randomX, 3.9f), Quaternion.identity);
@@ -105,9 +151,7 @@ public class GameManager : MonoBehaviour
                     Instantiate(ingredient4, new Vector2(randomX, 3.9f), Quaternion.identity);
                     break;
             }
-            yield return new WaitForSeconds(1f);
         }
-        yield return new WaitForSeconds(randomDelay);
     }
     public void AddScore()
     {
