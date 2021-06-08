@@ -8,7 +8,7 @@ public class BulletMove : MonoBehaviour
     [SerializeField]
     private float speed = 10f;
     private GameManager gameManager = null;
-    void Start()
+    void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
     }

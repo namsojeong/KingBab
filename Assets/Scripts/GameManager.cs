@@ -43,25 +43,27 @@ public class GameManager : MonoBehaviour
     private GameObject Life1, Life2;
 
     public PoolManager poolManager { get; private set; }
-    public PoolManager poolManagerIng { get; private set; }
-    public PoolManager poolManagerEnemy { get; private set; }
+    public PoolManagerIng poolManagerIng { get; private set; }
+    public PoolmanagerEnemy poolManagerEnemy { get; private set; }
 
     void Awake()
     {
         highscore = PlayerPrefs.GetInt("HIGHSCORE");
         poolManager = FindObjectOfType<PoolManager>();
+        poolManagerEnemy = FindObjectOfType<PoolmanagerEnemy>();
+        poolManagerIng = FindObjectOfType<PoolManagerIng>();
         MinPosition = new Vector2(-3f, -4f);
         MaxPosition = new Vector2(3f, 4f);
         UpdateUI();
         StartCoroutine(SpawnEnemy());
         StartCoroutine(SpawnIng());
     }
+
     private IEnumerator SpawnEnemy()
     {
         float randomX = 0f;
-        float randomDelay = 0f;
         int randomEnemy;
-
+        float randomDelay = Random.Range(0.5f, 5f);
         while (true)
         {
             InstantiateOrPoolEnemy();
@@ -71,18 +73,18 @@ public class GameManager : MonoBehaviour
     private IEnumerator SpawnIng()
     {
         float randomX = 0f;
-        float randomDelay = 0f;
         int randomIng;
+        float randomDelay = Random.Range(0.5f, 5f);
+
         while (true)
         {
             InstantiateOrPoolIng();
             yield return new WaitForSeconds(randomDelay);
         }
     }
-    private GameObject InstantiateOrPoolEnemy()
+    public GameObject InstantiateOrPoolEnemy()
     {
         float randomX = 0f;
-        float randomDelay = 0f;
         int randomEnemy;
         GameObject result = null;
         if (poolManagerEnemy.transform.childCount > 0)
@@ -99,7 +101,6 @@ public class GameManager : MonoBehaviour
         {
             randomEnemy = Random.Range(1, 5);
             randomX = Random.Range(-1.5f, 1.5f);
-            randomDelay = Random.Range(1f, 10f);
             switch (randomEnemy)
             {
                 case 1:
@@ -113,12 +114,12 @@ public class GameManager : MonoBehaviour
                     break;
             }
         }
+        return result;
     }
 
-    private GameObject InstantiateOrPoolIng()
+    public GameObject InstantiateOrPoolIng()
     {
         float randomX = 0f;
-        float randomDelay = 0f;
         int randomIng;
         GameObject result = null;
         if (poolManagerIng.transform.childCount > 0)
@@ -135,7 +136,6 @@ public class GameManager : MonoBehaviour
         {
             randomIng = Random.Range(1, 5);
             randomX = Random.Range(-1.5f, 1.5f);
-            randomDelay = Random.Range(1f, 10f);
             switch (randomIng)
             {
                 case 1:
@@ -152,6 +152,7 @@ public class GameManager : MonoBehaviour
                     break;
             }
         }
+        return result;
     }
     public void AddScore()
     {

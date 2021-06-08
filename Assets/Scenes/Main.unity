@@ -1616,7 +1616,7 @@ MonoBehaviour:
   movespeed: 6
   bulletPosition: {fileID: 1661921008}
   bulletPrefab: {fileID: 7588028754675007728, guid: 720fbf22d5c993a45bd73fa7f5ae067d, type: 3}
-  bulletDelay: 0.1
+  bulletDelay: 0.2
 --- !u!58 &1499824123
 CircleCollider2D:
   m_ObjectHideFlags: 0

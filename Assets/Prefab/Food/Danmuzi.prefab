@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7345788403054495406}
   - component: {fileID: 2418325377957489958}
   - component: {fileID: 1645376700291056202}
-  - component: {fileID: 2859056156142646612}
   - component: {fileID: 6810471895347492608}
+  - component: {fileID: -6337361845848670183}
   m_Layer: 7
   m_Name: Danmuzi
   m_TagString: Danmuzi
@@ -118,21 +118,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &2859056156142646612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3900687482055448167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62049c584ba1d4c47bbb304143c57a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 2
-  speed: 5
-  score: 100
 --- !u!50 &6810471895347492608
 Rigidbody2D:
   serializedVersion: 4
@@ -154,3 +139,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6337361845848670183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900687482055448167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf57482b5406264dab4d3bef5d91cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  speed: 5
