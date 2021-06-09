@@ -18,12 +18,13 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
-            collision.gameObject.SetActive(false);
+            DespawnEnemy();
         }
     }
     private void CheckLimit()

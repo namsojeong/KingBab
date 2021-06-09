@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         float randomX = 0f;
         int randomEnemy;
-        float randomDelay = Random.Range(0.5f, 5f);
+        float randomDelay = Random.Range(0.1f, 1.3f);
         while (true)
         {
             InstantiateOrPoolEnemy();
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         float randomX = 0f;
         int randomIng;
-        float randomDelay = Random.Range(0.5f, 5f);
+        float randomDelay = Random.Range(2f, 20f);
 
         while (true)
         {
