@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     [SerializeField]
+    private GameObject rule = null;
+    [SerializeField]
     private GameObject setting = null;
     private bool ismenu = false;
     private GameManager gameManager = null;
@@ -26,9 +28,17 @@ public class StartMenu : MonoBehaviour
     {
         setting.SetActive(true);
     }
-    public void OnCloseClick()
+    public void OnSettingCloseClick()
     {
         setting.SetActive(false);
+    }
+    public void OnRuleCloseClick()
+    {
+        rule.SetActive(false);
+    }
+    public void OnOpenRuleClick()
+    {
+        rule.SetActive(true);
     }
     public void OnRetryClick()
     {
@@ -43,13 +53,4 @@ public class StartMenu : MonoBehaviour
         PlayerPrefs.SetInt("HIGHSCORE", 0);
     }
 
-    //public void OnleftClick()
-    //{
-    //    background = 0;
-    //}
-    //public void OnrightClick()
-    //{
-    //    background = 1;
-    //}
-    
 }
