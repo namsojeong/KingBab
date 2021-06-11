@@ -10,33 +10,16 @@ public class StartMenu : MonoBehaviour
     private bool ismenu = false;
     private GameManager gameManager = null;
     private Animation animation = null;
-    //private int background = 0;
-    //public Color color1 = Color.red;
-    //public Color color2 = Color.blue;
-    //public float duration = 3.0f;
-    //Camera camera;
-    private void Start()
+    AudioSource bgm;
+    private void Awake()
     {
-        //camera = GetComponent<Camera>();
-        //camera.clearFlags = CameraClearFlags.SolidColor;
         animation = GetComponent<Animation>();
         gameManager = GetComponent<GameManager>();
-    }
-    private void Update()
-    {
-        //if(background==0)
-        //{
-        //    float t = Mathf.PingPong(Time.time, duration) / duration;
-        //    camera.backgroundColor = Color.Lerp(color1, color2, t);
-        //}
-        //if(background==1)
-        //{
-        //    float t = Mathf.PingPong(Time.time, duration) / duration;
-        //    camera.backgroundColor = Color.Lerp(color1, color2, t);
-        //}
+        bgm = GetComponent<AudioSource>();
     }
     public void OnPlayClick()
     {
+        DontDestroyOnLoad(bgm);
         SceneManager.LoadScene("Main");
     }
     public void OnSettingOpenClick()

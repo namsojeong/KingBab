@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         float randomX = 0f;
         int randomEnemy;
-        float randomDelay = Random.Range(0.1f, 1.3f);
+        float randomDelay = Random.Range(0.1f, 2.5f);
         while (true)
         {
             InstantiateOrPoolEnemy();
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         float randomX = 0f;
         int randomIng;
-        float randomDelay = Random.Range(2f, 20f);
+        float randomDelay = Random.Range(2f, 14f);
 
         while (true)
         {
@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
     }
     public void UpdateUI()
     {
-        textScore.text = string.Format("가격 {0}", score);
+        textScore.text = string.Format("가격  {0}", score);
         textSscore.text = string.Format("{0}", Sigumchi);
         textHscore.text = string.Format("{0}", Ham);
         textDscore.text = string.Format("{0}", Danmuzi);
@@ -184,7 +184,7 @@ public class GameManager : MonoBehaviour
     public void LifeDead()
     {
         life--;
-        if(life==2)
+        if (life==2)
         {
             Life1.SetActive(false);
         }

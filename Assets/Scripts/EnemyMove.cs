@@ -6,6 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     [SerializeField]
     private float speed = 5f;
+    private bool isDamaged = false;
 
     private GameManager gameManager = null;
     private Collider2D col = null;
@@ -24,6 +25,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
+            collision.gameObject.SetActive(false);
             DespawnEnemy();
         }
     }

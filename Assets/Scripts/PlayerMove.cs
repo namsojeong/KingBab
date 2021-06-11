@@ -73,22 +73,22 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             isDamaged = true;
-            //StartCoroutine(Damaged());
+            StartCoroutine(Damaged());
             gameManager.LifeDead();
         }
     }
 
-    //private IEnumerator Damaged()
-    //{
-    //    for(int i=0;i<3;i++)
-    //    {
-    //        gameObject.SetActive(false);
-    //        yield return new WaitForSeconds(0.1f);
-    //        gameObject.SetActive(true);
-    //        yield return new WaitForSeconds(0.1f);
-    //    }
-    //    isDamaged = false;
-    //}
+    private IEnumerator Damaged()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            spriteRenderer.enabled=false;
+            yield return new WaitForSeconds(0.2f);
+            spriteRenderer.enabled=true;
+            yield return new WaitForSeconds(0.2f);
+        }
+        isDamaged = false;
+    }
 
 
 }
