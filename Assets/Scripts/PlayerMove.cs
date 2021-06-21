@@ -7,48 +7,32 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private VirtualJoystick virtualJoystick;
     [SerializeField]
-    private float movespeed = 10;
-    private GameManager gameManager = null;
+    private float movespeed = 12f;
+    [SerializeField]
+    private Transform bulletPosition;
+    [SerializeField]
+    private GameObject bulletPrefab;
+    protected GameManager gameManager = null;
+    protected SoundManager soundManager = null;
     private SpriteRenderer spriteRenderer = null;
     private bool isDamaged = false;
 
-    [SerializeField]
-    private Transform bulletPosition = null;
-    [SerializeField]
-    private GameObject bulletPrefab=null;
-    [SerializeField]
-    private float bulletDelay = 0.5f;
-    private void Start()
+    protected virtual void Start()
     {
-
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameManager = FindObjectOfType<GameManager>();
+        soundManager = FindObjectOfType<SoundManager>();
         StartCoroutine(Fire());
-    }
-    void Update()
-    {
-        //¡∂¿ÃΩ∫∆Ω
-        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-        viewPos.x = Mathf.Clamp01(viewPos.x);
-        viewPos.y = Mathf.Clamp01(viewPos.y);
-        Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);
-        transform.position = worldPos;
-        float x = virtualJoystick.Horizontal();
-        float y = virtualJoystick.Vertical();
-        if(x!=0||y!=0)
-        {
-            transform.position += new Vector3(x, y, 0) * movespeed * Time.deltaTime;
-        }
     }
     private IEnumerator Fire()
     {
-        while (true)
+        while(true)
         {
-            InstantiateOrPoolBullet();
-            yield return new WaitForSeconds(bulletDelay);
+            InstanBullet();
+            yield return new WaitForSeconds(0.2f);
         }
     }
-    private GameObject InstantiateOrPoolBullet()
+    private GameObject InstanBullet()
     {
         GameObject result = null;
         if (gameManager.poolManager.transform.childCount > 0)
@@ -68,10 +52,26 @@ public class PlayerMove : MonoBehaviour
         return result;
     }
 
+    protected virtual void Update()
+    {
+        //¡∂¿ÃΩ∫∆Ω
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        viewPos.x = Mathf.Clamp01(viewPos.x);
+        viewPos.y = Mathf.Clamp01(viewPos.y);
+        Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);
+        transform.position = worldPos;
+        float x = virtualJoystick.Horizontal();
+        float y = virtualJoystick.Vertical();
+        if (x != 0 || y != 0)
+        {
+            transform.position += new Vector3(x, y, 0) * movespeed * Time.deltaTime;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
+            soundManager.LifeDead();
             isDamaged = true;
             StartCoroutine(Damaged());
             gameManager.LifeDead();
@@ -89,6 +89,5 @@ public class PlayerMove : MonoBehaviour
         }
         isDamaged = false;
     }
-
 
 }

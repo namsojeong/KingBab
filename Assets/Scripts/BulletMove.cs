@@ -7,17 +7,22 @@ public class BulletMove : MonoBehaviour
     [Header("이동 속도")]
     [SerializeField]
     private float speed = 10f;
-    private GameManager gameManager = null;
-    void Awake()
+    protected GameManager gameManager = null;
+    private SpriteRenderer spriteRenderer = null;
+
+
+    protected virtual void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         transform.Translate(Vector2.up*speed * Time.deltaTime);
         CheckLimit();
     }
+
     private void CheckLimit()
     {
         if (transform.position.y > gameManager.MaxPosition.y + 2f)
@@ -40,6 +45,7 @@ public class BulletMove : MonoBehaviour
     private void Despawn()
     {
         gameObject.SetActive(false);
+        //자식되기
         transform.SetParent(gameManager.poolManager.transform, false);
     }
 
@@ -60,6 +66,10 @@ public class BulletMove : MonoBehaviour
         if (collision.CompareTag("Sigumchi"))
         {
             gameManager.Sigumchi += 1;
+        }
+        if(collision.CompareTag("Enemy"))
+        {
+            Despawn();
         }
         gameManager.AddScore();
     }

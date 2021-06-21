@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public int Danmuzi = 0;
     public int Egg = 0;
     public int Ham = 0;
-    [SerializeField]
     public int Sigumchi = 0;
 
     [Header("점수")]
@@ -30,130 +29,75 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text textDscore = null;
 
-    [Header("적 프리펩")]
-
-    [SerializeField]
-    private GameObject enemy1, enemy2, enemy3;
-    [Header("재료 프리팹")]
-
-    [SerializeField]
-    private GameObject ingredient1, ingredient2, ingredient3, ingredient4;
     [Header("생명")]
     [SerializeField]
     private GameObject Life1, Life2;
+    [Header("적")]
+    [SerializeField]
+    private GameObject Ebread, Ecandy, Ecake;
+    [Header("재료")]
+    [SerializeField]
+    private GameObject Idanmuzi, Iham, Isigum, Iegg;
 
-    public PoolManager poolManager { get; private set; }
-    public PoolManagerIng poolManagerIng { get; private set; }
-    public PoolmanagerEnemy poolManagerEnemy { get; private set; }
-
-    void Awake()
+    public PoolingManager poolManager { get; private set; }
+    public ObjectManager objectManager { get; private set; }
+    protected virtual void Awake()
     {
         highscore = PlayerPrefs.GetInt("HIGHSCORE");
-        poolManager = FindObjectOfType<PoolManager>();
-        poolManagerEnemy = FindObjectOfType<PoolmanagerEnemy>();
-        poolManagerIng = FindObjectOfType<PoolManagerIng>();
-        MinPosition = new Vector2(-3f, -4f);
-        MaxPosition = new Vector2(3f, 4f);
+        MinPosition = new Vector2(-2.3f, -4.3f);
+        MaxPosition = new Vector2(2.06f, 2.31f);
         UpdateUI();
-        StartCoroutine(SpawnEnemy());
-        StartCoroutine(SpawnIng());
+        poolManager = FindObjectOfType<PoolingManager>();
+        objectManager = FindObjectOfType<ObjectManager>();
+        StartCoroutine(EnemySpawn());
     }
 
-    private IEnumerator SpawnEnemy()
+    private IEnumerator EnemySpawn()
     {
-        float randomX = 0f;
-        int randomEnemy;
-        float randomDelay = Random.Range(0.1f, 2.5f);
+        float randomDelay = Random.Range(0.2f, 10f);
         while (true)
         {
-            InstantiateOrPoolEnemy();
+            InstanEnemy();
             yield return new WaitForSeconds(randomDelay);
         }
     }
-    private IEnumerator SpawnIng()
+    private GameObject InstanEnemy()
     {
-        float randomX = 0f;
-        int randomIng;
-        float randomDelay = Random.Range(2f, 14f);
-
-        while (true)
+        GameObject enemy = null;
+        int randomE = Random.Range(1, 4);
+        float randomx = Random.Range(-2f, 2f);
+        float randomy = Random.Range(-2f, 2f);
+        if (objectManager.transform.childCount > 0)
         {
-            InstantiateOrPoolIng();
-            yield return new WaitForSeconds(randomDelay);
-        }
-    }
-    public GameObject InstantiateOrPoolEnemy()
-    {
-        float randomX = 0f;
-        int randomEnemy;
-        GameObject result = null;
-        if (poolManagerEnemy.transform.childCount > 0)
-        {
-            if (poolManagerEnemy.transform.childCount > 0)
-            {
-                result = poolManagerEnemy.transform.GetChild(0).gameObject;
-                result.transform.position = new Vector2(randomX, 3.9f);
-                result.transform.SetParent(null);
-                result.SetActive(true);
-            }
+            enemy = objectManager.transform.GetChild(0).gameObject;
+            enemy.transform.position = new Vector2(randomx, 2f);
+            enemy.transform.SetParent(null);
+            enemy.SetActive(true);
         }
         else
         {
-            randomEnemy = Random.Range(1, 5);
-            randomX = Random.Range(-1.5f, 1.5f);
-            switch (randomEnemy)
-            {
-                case 1:
-                    Instantiate(enemy1, new Vector2(randomX, 3.9f), Quaternion.identity);
-                    break;
-                case 2:
-                    Instantiate(enemy2, new Vector2(randomX, 3.9f), Quaternion.identity);
-                    break;
-                case 3:
-                    Instantiate(enemy3, new Vector2(randomX, 3.9f), Quaternion.identity);
-                    break;
+                switch(randomE)
+                {
+                    case 1:
+                        GameObject enemyB = Instantiate(Ebread, new Vector2(randomx, 2f), Quaternion.identity);
+                        enemyB.transform.SetParent(null);
+                        enemy = enemyB;
+                        break;
+                    case 2:
+                        GameObject enemyCan = Instantiate(Ecandy, new Vector2(2f, randomy), Quaternion.identity);
+                        enemyCan.transform.SetParent(null);
+                        enemy = enemyCan;
+                        break;
+                    case 3:
+                        GameObject enemyCake = Instantiate(Ecake, new Vector2(randomx, 2f), Quaternion.identity);
+                        enemyCake.transform.SetParent(null);
+                        enemy = enemyCake;
+                        break;
             }
         }
-        return result;
+        return enemy;
     }
 
-    public GameObject InstantiateOrPoolIng()
-    {
-        float randomX = 0f;
-        int randomIng;
-        GameObject result = null;
-        if (poolManagerIng.transform.childCount > 0)
-        {
-            if (poolManagerIng.transform.childCount > 0)
-            {
-                result = poolManagerIng.transform.GetChild(0).gameObject;
-                result.transform.position = new Vector2(randomX, 3.9f);
-                result.transform.SetParent(null);
-                result.SetActive(true);
-            }
-        }
-        else
-        {
-            randomIng = Random.Range(1, 5);
-            randomX = Random.Range(-1.5f, 1.5f);
-            switch (randomIng)
-            {
-                case 1:
-                    Instantiate(ingredient1, new Vector2(randomX, 3.9f), Quaternion.identity);
-                    break;
-                case 2:
-                    Instantiate(ingredient2, new Vector2(randomX, 3.9f), Quaternion.identity);
-                    break;
-                case 3:
-                    Instantiate(ingredient3, new Vector2(randomX, 3.9f), Quaternion.identity);
-                    break;
-                case 4:
-                    Instantiate(ingredient4, new Vector2(randomX, 3.9f), Quaternion.identity);
-                    break;
-            }
-        }
-        return result;
-    }
     public void AddScore()
     {
         if (Danmuzi >= 1 && Egg >= 1 && Ham >= 1 && Sigumchi >= 1)

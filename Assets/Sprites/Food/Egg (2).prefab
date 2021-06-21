@@ -152,5 +152,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf57482b5406264dab4d3bef5d91cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
   speed: 5
+  deadSound: {fileID: 0}

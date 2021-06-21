@@ -10,11 +10,12 @@ TagManager:
   - Egg
   - Danmuzi
   - Enemy
+  - candy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bullet
   - Water
   - UI
   - Player

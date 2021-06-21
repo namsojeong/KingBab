@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 554360252064013625}
   m_Layer: 7
   m_Name: candy2
-  m_TagString: Enemy
+  m_TagString: candy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62049c584ba1d4c47bbb304143c57a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 6
 --- !u!60 &554360252064013625
 PolygonCollider2D:
   m_ObjectHideFlags: 0

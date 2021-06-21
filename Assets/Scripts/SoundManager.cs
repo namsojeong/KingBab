@@ -4,10 +4,49 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource musicsource;
-
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip buttonClick;
+    [SerializeField]
+    private AudioClip dead;
+    [SerializeField]
+    private AudioSource bgm;
+    [SerializeField]
+    private AudioClip lifeDead;
+    private void Start()
+    {
+        bgm = GetComponent<AudioSource>();
+    }
+    public void Startbgm()
+    {
+        bgm.Play();
+        DontDestroyOnLoad(bgm);
+    }
+    public void Stopbgm()
+    {
+        bgm.Stop();
+    }
+    public void OnbuttonClick()
+    {
+        audioSource.clip = buttonClick;
+        if (audioSource == null) return;
+        audioSource.Play();
+    }
     public void SetMusicVolume(float volume)
     {
-        musicsource.volume = volume;
-    }    
+        bgm.volume = volume;
+        audioSource.volume = volume;
+    }
+    public void Dead()
+    {
+        audioSource.clip = dead;
+        audioSource.Play();
+    }
+    public void LifeDead()
+    {
+        audioSource.clip = lifeDead;
+        audioSource.Play();
+    }
+
 }

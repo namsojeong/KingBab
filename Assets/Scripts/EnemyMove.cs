@@ -6,41 +6,46 @@ public class EnemyMove : MonoBehaviour
 {
     [SerializeField]
     private float speed = 5f;
-    private bool isDamaged = false;
 
-    private GameManager gameManager = null;
+    protected GameManager gameManager = null;
+    private SpriteRenderer spriteRenderer=null;
     private Collider2D col = null;
-    void Start()
+    protected virtual void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         col = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bullet"))
+        if(CompareTag("candy"))
         {
-            collision.gameObject.SetActive(false);
-            DespawnEnemy();
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
+        else
+        {
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        }
+        CheckLimit();
     }
+
     private void CheckLimit()
     {
         
         if (transform.position.y < gameManager.MinPosition.y - 2f)
         {
-            DespawnEnemy();
+            Despawn();
         }
 
+        if(transform.position.x < gameManager.MinPosition.x - 2f)
+        {
+            Despawn();
+        }
     }
-    private void DespawnEnemy()
-    {
-        gameObject.SetActive(false);
-        transform.SetParent(gameManager.poolManagerEnemy.transform, false);
-    }
+        private void Despawn()
+        {
+            gameObject.SetActive(false);
+            transform.SetParent(gameManager.objectManager.transform, false);
+        }
 }

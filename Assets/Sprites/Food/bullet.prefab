@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7588028754675007727}
   - component: {fileID: 3922681931444540585}
   - component: {fileID: 2638186472732695900}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7588028754675007728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,7 +107,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -126,7 +126,9 @@ PolygonCollider2D:
       - {x: -0.058739632, y: -0.250409}
       - {x: 0.0243427, y: -0.25259835}
       - {x: 0.09347576, y: -0.13402689}
+      - {x: 0.111734115, y: -0.13094978}
       - {x: 0.11173398, y: -0.1309497}
+      - {x: 0.10682873, y: -0.06472757}
       - {x: 0.10557971, y: -0.047867447}
       - {x: 0.11980328, y: 0.017709717}
       - {x: 0.11364905, y: 0.058260843}

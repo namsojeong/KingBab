@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8686829462339761415}
   - component: {fileID: 7576789924213072756}
   m_Layer: 7
-  m_Name: bread2
+  m_Name: bread
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,19 +9,30 @@ public class StartMenu : MonoBehaviour
     private GameObject rule = null;
     [SerializeField]
     private GameObject setting = null;
-    private bool ismenu = false;
+    [SerializeField]
+    private GameObject Quit = null;
     private GameManager gameManager = null;
-    private Animation animation = null;
-    AudioSource bgm;
-    private void Awake()
+    private SoundManager soundManager;
+    protected virtual void Awake()
     {
-        animation = GetComponent<Animation>();
+        soundManager = FindObjectOfType<SoundManager>();
         gameManager = GetComponent<GameManager>();
-        bgm = GetComponent<AudioSource>();
+        soundManager.Startbgm();
+    }
+    public void OnQuitClick()
+    {
+        Quit.SetActive(true);
+    }
+    public void OnQuitYes()
+    {
+        Application.Quit();
+    }
+    public void OnQuitNo()
+    {
+        Quit.SetActive(false);
     }
     public void OnPlayClick()
     {
-        DontDestroyOnLoad(bgm);
         SceneManager.LoadScene("Main");
     }
     public void OnSettingOpenClick()
@@ -40,10 +51,6 @@ public class StartMenu : MonoBehaviour
     {
         rule.SetActive(true);
     }
-    public void OnRetryClick()
-    {
-        SceneManager.LoadScene("Main");
-    }
     public void OnHomeClick()
     {
         SceneManager.LoadScene("Start");
@@ -52,5 +59,5 @@ public class StartMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("HIGHSCORE", 0);
     }
-
+    
 }
