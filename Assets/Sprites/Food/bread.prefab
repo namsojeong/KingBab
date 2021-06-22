@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 9196550063077571902}
   - component: {fileID: -8686829462339761415}
   - component: {fileID: 7576789924213072756}
+  - component: {fileID: -4798279999461159705}
   m_Layer: 7
   m_Name: bread
-  m_TagString: Enemy
+  m_TagString: Bread
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,3 +133,24 @@ PolygonCollider2D:
       - {x: 0.20775963, y: 0.041592896}
       - {x: 0.2558, y: 0.08692743}
       - {x: 0.2504316, y: 0.27392307}
+--- !u!50 &-4798279999461159705
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8770534377950048733}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

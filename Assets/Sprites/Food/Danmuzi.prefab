@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1645376700291056202}
   - component: {fileID: 6810471895347492608}
   - component: {fileID: -6337361845848670183}
-  m_Layer: 7
+  - component: {fileID: 8462288766911161627}
+  m_Layer: 8
   m_Name: Danmuzi
   m_TagString: Danmuzi
   m_Icon: {fileID: 0}
@@ -152,4 +153,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  deadSound: {fileID: 0}
+--- !u!95 &8462288766911161627
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900687482055448167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1637a3c45a74f24c9ad812a9c9c5d33, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

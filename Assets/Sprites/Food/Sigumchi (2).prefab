@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7570629021117488339}
   - component: {fileID: -3354983865199785983}
   - component: {fileID: 5346303018625157535}
-  m_Layer: 7
+  - component: {fileID: -314578567160083938}
+  m_Layer: 8
   m_Name: Sigumchi (2)
   m_TagString: Sigumchi
   m_Icon: {fileID: 0}
@@ -158,4 +159,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  deadSound: {fileID: 0}
+--- !u!95 &-314578567160083938
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428383664657071149}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: daef2157d1239694295fdf6d48e9bea8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

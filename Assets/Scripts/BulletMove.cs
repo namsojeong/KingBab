@@ -45,7 +45,6 @@ public class BulletMove : MonoBehaviour
     private void Despawn()
     {
         gameObject.SetActive(false);
-        //자식되기
         transform.SetParent(gameManager.poolManager.transform, false);
     }
 
@@ -67,10 +66,7 @@ public class BulletMove : MonoBehaviour
         {
             gameManager.Sigumchi += 1;
         }
-        if(collision.CompareTag("Enemy"))
-        {
-            Despawn();
-        }
+        Despawn();
         gameManager.AddScore();
     }
 }

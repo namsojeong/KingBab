@@ -29,7 +29,7 @@ public class PlayerMove : MonoBehaviour
         while(true)
         {
             InstanBullet();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
     private GameObject InstanBullet()
@@ -69,13 +69,11 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            soundManager.LifeDead();
+            if (isDamaged) return;
             isDamaged = true;
+            soundManager.LifeDead();
             StartCoroutine(Damaged());
             gameManager.LifeDead();
-        }
     }
 
     private IEnumerator Damaged()

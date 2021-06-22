@@ -6,50 +6,50 @@ public class IngMove : MonoBehaviour
 {
     [SerializeField]
     private float speed = 5f;
-    private bool isDead = false;
-    private bool isDamaged = false;
 
     private SpriteRenderer spriteRenderer = null;
     private GameManager gameManager = null;
     private SoundManager soundManager = null;
     private Collider2D col = null;
+    private Animator anim = null;
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
         gameManager = FindObjectOfType<GameManager>();
         col = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (isDead) return;
         transform.Translate(Vector2.down * speed * Time.deltaTime);
         CheckLimit();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
             soundManager.Dead();
-            Damaged();
-            gameObject.SetActive(false);
+            anim.Play("IngAnim");
+            Despawn();
         }
-    }
-    void Damaged()
-    {
-        if (isDamaged) return;
-        gameObject.SetActive(false);
-        isDead = false;
     }
     private void CheckLimit()
     {
 
         if (transform.position.y < gameManager.MinPosition.y - 2f)
         {
-            gameObject.SetActive(false);
+            Despawn();
         }
 
+    }
+
+    private void Despawn()
+    {
+        gameObject.SetActive(false);
+        transform.SetParent(gameManager.poolIngManager.transform, false);
     }
 
 }

@@ -15,6 +15,7 @@ public class EnemyMove : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         col = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
 
     protected virtual void Update()
@@ -29,7 +30,6 @@ public class EnemyMove : MonoBehaviour
         }
         CheckLimit();
     }
-
     private void CheckLimit()
     {
         
@@ -46,6 +46,6 @@ public class EnemyMove : MonoBehaviour
         private void Despawn()
         {
             gameObject.SetActive(false);
-            transform.SetParent(gameManager.objectManager.transform, false);
+            transform.SetParent(gameManager.poolEnemyManager.transform, false);
         }
 }
