@@ -7,22 +7,21 @@ public class BulletMove : MonoBehaviour
     [Header("이동 속도")]
     [SerializeField]
     private float speed = 10f;
-    protected GameManager gameManager = null;
-    private SpriteRenderer spriteRenderer = null;
+    private GameManager gameManager = null;
 
-
-    protected virtual void Awake()
+    private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    protected virtual void Update()
+    //이동
+    private void Update()
     {
-        transform.Translate(Vector2.up*speed * Time.deltaTime);
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
         CheckLimit();
     }
 
+    //경계영역 확인 후 리스폰
     private void CheckLimit()
     {
         if (transform.position.y > gameManager.MaxPosition.y + 2f)
@@ -42,12 +41,15 @@ public class BulletMove : MonoBehaviour
             Despawn();
         }
     }
+
+    //다시 스폰
     private void Despawn()
     {
         gameObject.SetActive(false);
         transform.SetParent(gameManager.poolManager.transform, false);
     }
 
+    //충돌시
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Danmuzi"))

@@ -13,7 +13,7 @@ public class StartMenu : MonoBehaviour
     private GameObject Quit = null;
     private GameManager gameManager = null;
     private SoundManager soundManager;
-    protected virtual void Awake()
+    private void Awake()
     {
         soundManager = FindObjectOfType<SoundManager>();
         gameManager = GetComponent<GameManager>();

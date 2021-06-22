@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3563908141033853400}
   - component: {fileID: 554360252064013625}
   - component: {fileID: -1518046488469117413}
+  - component: {fileID: 5165893013763374456}
   m_Layer: 7
   m_Name: candy2
   m_TagString: candy
@@ -97,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62049c584ba1d4c47bbb304143c57a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
 --- !u!60 &554360252064013625
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -123,19 +123,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.10245182, y: 0.44587833}
-      - {x: -0.20473224, y: 0.36919802}
-      - {x: -0.25451258, y: 0.29414102}
-      - {x: -0.26386893, y: 0.1343003}
+    - - {x: -0.099328026, y: 0.45212588}
+      - {x: -0.16391963, y: 0.4279006}
+      - {x: -0.21722731, y: 0.38169307}
+      - {x: -0.27013144, y: 0.29414102}
+      - {x: -0.2701165, y: 0.1343003}
       - {x: -0.22745183, y: 0.038011484}
       - {x: -0.09472017, y: -0.058649004}
       - {x: -0.07248052, y: -0.3833784}
-      - {x: 0.0515493, y: -0.37145755}
+      - {x: 0.0515493, y: -0.3839526}
       - {x: 0.052003413, y: -0.057417378}
       - {x: 0.1768727, y: 0.03382227}
-      - {x: 0.22526403, y: 0.11775225}
-      - {x: 0.22326262, y: 0.26256767}
-      - {x: 0.12597016, y: 0.43041518}
+      - {x: 0.23151158, y: 0.111504726}
+      - {x: 0.22951016, y: 0.28755775}
+      - {x: 0.11659883, y: 0.44915804}
 --- !u!50 &-1518046488469117413
 Rigidbody2D:
   serializedVersion: 4
@@ -157,3 +158,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5165893013763374456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649987032715361520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baef8cd90528b6c42a5c9f6d141a7e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2

@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
     [SerializeField]
     private Text textHighScore=null;
     private SoundManager soundManager;
-    protected virtual void Start()
+    private void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
         textHighScore.text = string.Format("{0}", PlayerPrefs.GetInt("HIGHSCORE"), 0);

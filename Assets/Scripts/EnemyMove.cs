@@ -4,48 +4,19 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 5f;
-
     protected GameManager gameManager = null;
-    private SpriteRenderer spriteRenderer=null;
+    private SpriteRenderer spriteRenderer = null;
     private Collider2D col = null;
-    protected virtual void Start()
+    private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         col = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
     }
-
-    protected virtual void Update()
+    //스폰 코드
+    protected void Despawn()
     {
-        if(CompareTag("candy"))
-        {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
-        }
-        CheckLimit();
+        gameObject.SetActive(false);
+        transform.SetParent(gameManager.poolEnemyManager.transform, false);
     }
-    private void CheckLimit()
-    {
-        
-        if (transform.position.y < gameManager.MinPosition.y - 2f)
-        {
-            Despawn();
-        }
-
-        if(transform.position.x < gameManager.MinPosition.x - 2f)
-        {
-            Despawn();
-        }
-    }
-        private void Despawn()
-        {
-            gameObject.SetActive(false);
-            transform.SetParent(gameManager.poolEnemyManager.transform, false);
-        }
 }

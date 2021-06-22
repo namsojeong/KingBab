@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1638155647218602936}
   - component: {fileID: 9196550063077571902}
-  - component: {fileID: -8686829462339761415}
   - component: {fileID: 7576789924213072756}
   - component: {fileID: -4798279999461159705}
+  - component: {fileID: 6546874839291753421}
   m_Layer: 7
   m_Name: bread
   m_TagString: Bread
@@ -85,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8686829462339761415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8770534377950048733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62049c584ba1d4c47bbb304143c57a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!60 &7576789924213072756
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -123,16 +110,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.24170372, y: 0.28594923}
-      - {x: -0.37931082, y: 0.2933195}
+    - - {x: 0.24471298, y: 0.28476146}
+      - {x: 0.2440863, y: 0.28594923}
+      - {x: -0.3912238, y: 0.2933195}
+      - {x: -0.38486692, y: 0.17251205}
       - {x: -0.38477436, y: 0.07303357}
       - {x: -0.33018368, y: 0.049794026}
-      - {x: -0.32888037, y: -0.29741457}
-      - {x: -0.28965598, y: -0.33642307}
-      - {x: 0.18814743, y: -0.34030238}
-      - {x: 0.20775963, y: 0.041592896}
-      - {x: 0.2558, y: 0.08692743}
-      - {x: 0.2504316, y: 0.27392307}
+      - {x: -0.3217326, y: -0.2878842}
+      - {x: -0.28965598, y: -0.35548374}
+      - {x: 0.19053003, y: -0.35936305}
+      - {x: 0.20092681, y: -0.28847682}
+      - {x: 0.19584672, y: 0.04635807}
+      - {x: 0.2558, y: 0.06548417}
+      - {x: 0.25996193, y: 0.27392307}
 --- !u!50 &-4798279999461159705
 Rigidbody2D:
   serializedVersion: 4
@@ -154,3 +144,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6546874839291753421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8770534377950048733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6aa24e5d4780c94e8e2f626eb571621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4

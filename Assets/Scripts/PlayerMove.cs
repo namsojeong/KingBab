@@ -12,26 +12,30 @@ public class PlayerMove : MonoBehaviour
     private Transform bulletPosition;
     [SerializeField]
     private GameObject bulletPrefab;
-    protected GameManager gameManager = null;
-    protected SoundManager soundManager = null;
+    private GameManager gameManager = null;
+    private SoundManager soundManager = null;
     private SpriteRenderer spriteRenderer = null;
     private bool isDamaged = false;
 
-    protected virtual void Start()
+    private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameManager = FindObjectOfType<GameManager>();
         soundManager = FindObjectOfType<SoundManager>();
         StartCoroutine(Fire());
     }
+
+    //총알 코루틴
     private IEnumerator Fire()
     {
-        while(true)
+        while (true)
         {
             InstanBullet();
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.22f);
         }
     }
+
+    //총알 풀링
     private GameObject InstanBullet()
     {
         GameObject result = null;
@@ -52,7 +56,8 @@ public class PlayerMove : MonoBehaviour
         return result;
     }
 
-    protected virtual void Update()
+    //조이스틱을 이용한 이동
+    private void Update()
     {
         //조이스틱
         Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
@@ -67,22 +72,25 @@ public class PlayerMove : MonoBehaviour
             transform.position += new Vector3(x, y, 0) * movespeed * Time.deltaTime;
         }
     }
+
+    //충돌시
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            if (isDamaged) return;
-            isDamaged = true;
-            soundManager.LifeDead();
-            StartCoroutine(Damaged());
-            gameManager.LifeDead();
+        if (isDamaged) return;
+        isDamaged = true;
+        soundManager.LifeDead();
+        StartCoroutine(Damaged());
+        gameManager.LifeDead();
     }
 
+    //데미지 입었을 때 효과
     private IEnumerator Damaged()
     {
         for (int i = 0; i < 4; i++)
         {
-            spriteRenderer.enabled=false;
+            spriteRenderer.enabled = false;
             yield return new WaitForSeconds(0.2f);
-            spriteRenderer.enabled=true;
+            spriteRenderer.enabled = true;
             yield return new WaitForSeconds(0.2f);
         }
         isDamaged = false;

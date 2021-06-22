@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text textDscore = null;
 
+    //프리펩
     [Header("생명")]
     [SerializeField]
     private GameObject Life1, Life2;
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
     public ObjectManager poolEnemyManager { get; private set; }
     public IngPooling poolIngManager { get; private set; }
 
-    protected virtual void Awake()
+    private void Awake()
     {
         highscore = PlayerPrefs.GetInt("HIGHSCORE");
         MinPosition = new Vector2(-2.3f, -4.3f);
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
     //적 풀링 실행
     private IEnumerator EnemySpawn()
     {
-        float randomDelay = Random.Range(0.2f, 5f);
+        float randomDelay = Random.Range(0.2f, 3.8f);
         while (true)
         {
             InstanEnemy();
@@ -100,7 +101,7 @@ public class GameManager : MonoBehaviour
     //재료 풀링 실행
     private IEnumerator IngSpawn()
     {
-        float randomDelay = Random.Range(0.2f, 5f);
+        float randomDelay = Random.Range(0.2f, 4.2f);
         while (true)
         {
             InstanIng();
@@ -114,9 +115,6 @@ public class GameManager : MonoBehaviour
         GameObject ing = null;
         int randomI = Random.Range(1, 5);
         float randomx = Random.Range(-2f, 2f);
-        float randomy = Random.Range(-2f, 2f);
-
-
         if (poolIngManager.transform.childCount > 0)
         {
             ing = poolIngManager.transform.GetChild(0).gameObject;
@@ -141,9 +139,9 @@ public class GameManager : MonoBehaviour
                     ing = Iham;
                     break;
             }
-            Instantiate(ing, new Vector2(randomx, 4f), Quaternion.identity);
-            ing = poolIngManager.transform.GetChild(0).gameObject;
-            ing.SetActive(true);
+            GameObject newIng = Instantiate(ing, new Vector2(randomx, 4f), Quaternion.identity);
+            ing = newIng;
+            newIng.SetActive(true);
         }
         return ing;
     }
@@ -155,7 +153,6 @@ public class GameManager : MonoBehaviour
         int randomE = Random.Range(1, 4);
         float randomx = Random.Range(-2f, 2.2f);
         float randomy = Random.Range(-4f, 2.2f);
-
         if (poolEnemyManager.transform.childCount > 0)
         {
             enemy = poolEnemyManager.transform.GetChild(0).gameObject;
@@ -180,16 +177,18 @@ public class GameManager : MonoBehaviour
                     enemy = Ecandy;
                     break;
             }
+            GameObject newEnemy = null;
             if (enemy.CompareTag("candy"))
-                Instantiate(Ecandy, new Vector2(2.2f, randomy), Quaternion.identity);
+            {
+                newEnemy = Instantiate(Ecandy, new Vector2(2.2f, randomy), Quaternion.identity);
+            }
             else
-                Instantiate(enemy, new Vector2(randomx, 4f), Quaternion.identity);
-            enemy = poolEnemyManager.transform.GetChild(0).gameObject;
+                newEnemy = Instantiate(enemy, new Vector2(randomx, 4f), Quaternion.identity);
+            enemy = newEnemy;
             enemy.SetActive(true);
         }
         return enemy;
     }
-
     //점수
     public void AddScore()
     {

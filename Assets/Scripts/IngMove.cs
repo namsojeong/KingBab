@@ -11,14 +11,12 @@ public class IngMove : MonoBehaviour
     private GameManager gameManager = null;
     private SoundManager soundManager = null;
     private Collider2D col = null;
-    private Animator anim = null;
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
         gameManager = FindObjectOfType<GameManager>();
         col = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -27,15 +25,17 @@ public class IngMove : MonoBehaviour
         CheckLimit();
     }
 
+    //총알 충돌시
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
             soundManager.Dead();
-            anim.Play("IngAnim");
             Despawn();
         }
     }
+
+    //영역 체크
     private void CheckLimit()
     {
 
@@ -46,6 +46,7 @@ public class IngMove : MonoBehaviour
 
     }
 
+    //비활성화
     private void Despawn()
     {
         gameObject.SetActive(false);

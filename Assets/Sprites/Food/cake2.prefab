@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9047132836926084033}
   - component: {fileID: 447004278732530514}
   - component: {fileID: -6222565113543329076}
+  - component: {fileID: 8869315599561476167}
   m_Layer: 7
   m_Name: cake2
   m_TagString: Cake
@@ -97,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62049c584ba1d4c47bbb304143c57a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
 --- !u!60 &447004278732530514
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -123,17 +123,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.24684173, y: 0.3277549}
-      - {x: 0.15699017, y: 0.34192845}
-      - {x: -0.22854024, y: 0.11953532}
-      - {x: -0.3401069, y: 0.0625}
-      - {x: -0.34483144, y: -0.15841278}
-      - {x: -0.32849503, y: -0.2834128}
+    - - {x: 0.2649269, y: 0.35488248}
+      - {x: 0.15699017, y: 0.3509712}
+      - {x: -0.24361116, y: 0.14364865}
+      - {x: -0.35819197, y: 0.07757091}
+      - {x: -0.36291656, y: -0.15841278}
+      - {x: -0.35863686, y: -0.28944117}
       - {x: -0.2765255, y: -0.30703533}
       - {x: -0.21004114, y: -0.31938732}
       - {x: -0.07845251, y: -0.35268342}
-      - {x: 0.2510814, y: -0.38080594}
-      - {x: 0.2558059, y: 0.12932557}
+      - {x: 0.28423744, y: -0.3988911}
+      - {x: 0.27389106, y: 0.15343922}
 --- !u!50 &-6222565113543329076
 Rigidbody2D:
   serializedVersion: 4
@@ -155,3 +155,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8869315599561476167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8789235074412632255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6aa24e5d4780c94e8e2f626eb571621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3

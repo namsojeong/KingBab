@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6897295028706282129}
   - component: {fileID: -3957821403910207576}
   - component: {fileID: 7060682153786792876}
-  - component: {fileID: -277777299588260852}
   m_Layer: 8
   m_Name: Egg (2)
   m_TagString: Egg
@@ -154,22 +153,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!95 &-277777299588260852
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300434314287103582}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 29b7f1e4b0f386748b14abba41685f93, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
