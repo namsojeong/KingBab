@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
     //UI 새로고침
     public void UpdateUI()
     {
-        textScore.text = string.Format("가격  {0}", score);
+        textScore.text = string.Format("가격 {0}", score);
         textSscore.text = string.Format("{0}", Sigumchi);
         textHscore.text = string.Format("{0}", Ham);
         textDscore.text = string.Format("{0}", Danmuzi);

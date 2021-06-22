@@ -15,6 +15,8 @@ public class StartMenu : MonoBehaviour
     private SoundManager soundManager;
     private void Awake()
     {
+        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         soundManager = FindObjectOfType<SoundManager>();
         gameManager = GetComponent<GameManager>();
         soundManager.Startbgm();
