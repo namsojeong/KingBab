@@ -7,7 +7,7 @@ public class EnemyMove : MonoBehaviour
     protected GameManager gameManager = null;
     private SpriteRenderer spriteRenderer = null;
     private Collider2D col = null;
-    private void Start()
+    protected virtual void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         col = GetComponent<Collider2D>();

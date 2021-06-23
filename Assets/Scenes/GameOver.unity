@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 1148721852}
   - component: {fileID: 1148721851}
   m_Layer: 5
-  m_Name: highText
+  m_Name: HIGHSCORE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,7 +697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 441}
+  m_AnchoredPosition: {x: 0, y: 523}
   m_SizeDelta: {x: 692.39, y: 413.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148721851
@@ -733,7 +733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uACE0 \uAC00\uACA9"
+  m_Text: "\uCD5C\uACE0 \uAC00\uACA9\n0"
 --- !u!222 &1148721852
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 1417873056}
   - component: {fileID: 1417873055}
   m_Layer: 5
-  m_Name: HIGHSCORE
+  m_Name: SCORE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,7 +851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e7bda0638731542859bbe08a67228e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textHighScore: {fileID: 1417873055}
+  textHighScore: {fileID: 1148721851}
+  textScore: {fileID: 1417873055}
 --- !u!4 &1595038538
 Transform:
   m_ObjectHideFlags: 0

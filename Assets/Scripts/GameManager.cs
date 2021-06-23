@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     //적 풀링 실행
     private IEnumerator EnemySpawn()
     {
-        float randomDelay = Random.Range(0.2f, 3.8f);
+        float randomDelay = Random.Range(0.2f, 5f);
         while (true)
         {
             InstanEnemy();
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
     //재료 풀링 실행
     private IEnumerator IngSpawn()
     {
-        float randomDelay = Random.Range(0.2f, 4.2f);
+        float randomDelay = Random.Range(0.2f, 4f);
         while (true)
         {
             InstanIng();
@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
         if (poolEnemyManager.transform.childCount > 0)
         {
             enemy = poolEnemyManager.transform.GetChild(0).gameObject;
-            if (enemy.CompareTag("candy"))
+            if (enemy.CompareTag("Cake"))
                 enemy.transform.position = new Vector2(2.3f, randomy);
             else
                 enemy.transform.position = new Vector2(randomx, 4f);
@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
                     break;
             }
             GameObject newEnemy = null;
-            if (enemy.CompareTag("candy"))
+            if (enemy.CompareTag("Cake"))
             {
                 newEnemy = Instantiate(Ecandy, new Vector2(2.2f, randomy), Quaternion.identity);
             }
@@ -234,6 +234,8 @@ public class GameManager : MonoBehaviour
         }
         if (life <= 0)
         {
+            PlayerPrefs.SetInt("SCORE", score);
+            PlayerPrefs.SetInt("HIGHSCORE", highscore);
             SceneManager.LoadScene("GameOver");
         }
     }

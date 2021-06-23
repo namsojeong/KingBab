@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4005168363140568372}
   - component: {fileID: 7352842467679113993}
-  - component: {fileID: 3563908141033853400}
   - component: {fileID: 554360252064013625}
   - component: {fileID: -1518046488469117413}
   - component: {fileID: 5165893013763374456}
+  - component: {fileID: 1553494538189020492}
   m_Layer: 7
   m_Name: candy2
   m_TagString: candy
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3563908141033853400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649987032715361520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62049c584ba1d4c47bbb304143c57a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &554360252064013625
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -170,4 +158,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baef8cd90528b6c42a5c9f6d141a7e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
+--- !u!95 &1553494538189020492
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649987032715361520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 497b5a23c35f83f458cd268e337a2b15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
