@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
     //재료 풀링 실행
     private IEnumerator IngSpawn()
     {
-        float randomDelay = Random.Range(0.2f, 4f);
+        float randomDelay = Random.Range(0.2f, 3.5f);
         while (true)
         {
             InstanIng();
@@ -189,6 +189,7 @@ public class GameManager : MonoBehaviour
         }
         return enemy;
     }
+
     //점수
     public void AddScore()
     {
