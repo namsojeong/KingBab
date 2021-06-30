@@ -33,11 +33,7 @@ public class SoundManager : MonoBehaviour
         if (audioSource == null) return;
         audioSource.Play();
     }
-    public void SetMusicVolume(float volume)
-    {
-        bgm.volume = volume;
-        audioSource.volume = volume;
-    }
+
     public void Dead()
     {
         audioSource.clip = dead;

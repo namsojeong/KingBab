@@ -8,8 +8,6 @@ public class StartMenu : MonoBehaviour
     [SerializeField]
     private GameObject rule = null;
     [SerializeField]
-    private GameObject setting = null;
-    [SerializeField]
     private GameObject Quit = null;
     private GameManager gameManager = null;
     private SoundManager soundManager;
@@ -36,14 +34,6 @@ public class StartMenu : MonoBehaviour
     public void OnPlayClick()
     {
         SceneManager.LoadScene("Main");
-    }
-    public void OnSettingOpenClick()
-    {
-        setting.SetActive(true);
-    }
-    public void OnSettingCloseClick()
-    {
-        setting.SetActive(false);
     }
     public void OnRuleCloseClick()
     {
