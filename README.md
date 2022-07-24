@@ -13,5 +13,5 @@
 
 재료들을 모아 김밥중의 왕, 최고의 김밥이 되어보세요
 
-# 자세한 설명은 아래 링크를 클릭해주세요
+# 자세한 설명
 https://www.notion.so/Switch-Color-67e8edb3df5a4d2fb658403c1bdd3e8d
